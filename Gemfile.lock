@@ -191,7 +191,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootsnap
-  bootstrap-sass (~> 3.3)
+  bootstrap-sass
   dotenv-rails
   font-awesome-sass (~> 5.0.9)
   jbuilder (~> 2.0)
