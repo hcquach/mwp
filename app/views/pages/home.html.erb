@@ -1,10 +1,19 @@
 <header class="header">
-  <div class="logo-box">
-    <%= image_tag("logo-black-2.png", alt:"Wagon", class:"logo") %>
+
+  <div class="bg-video">
+    <%= video_tag(["video.mp4", "video.webm"], muted: true, loop: true, autoplay: true, class: "bg-video__content") %>
+
+    <div class="header__logo-box">
+      <%= image_tag("logo-black-2.png", alt:"Wagon", class:"header__logo") %>
+      x
+      <%= image_tag("logo-alumni.png", alt:"Alumni", class:"header__logo") %>
+    </div>
+    <div class="header__text-box">
+      <h1 class="heading-primary">
+        Products
+      </h1>
+    </div>
+
   </div>
-  <div class="text-box">
-    <h1 class="heading-primary">
-      Products
-    </h1>
-  </div>
+
 </header>
