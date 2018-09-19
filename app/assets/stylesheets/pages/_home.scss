@@ -1,8 +1,5 @@
 // Specific CSS for your home-page
 
-$color-primary: #ea5455;
-$color-primary-light: #f07b3f;
-
 *,
 *::after,
 *::before {
@@ -26,7 +23,7 @@ body {
 }
 
 .header {
-  height: 95vh;
+  height: 90vh;
   // background-image: linear-gradient(
   //   to right bottom,
   //   rgba($color-primary, 0.8),
@@ -38,17 +35,32 @@ body {
 
   &__logo-box {
     position: absolute;
-    top: 4rem;
-    left: 4rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
+  &__logo-wagon {
+    height: 7rem;
     animation-name: moveInDown;
     animation-duration: 1s;
     animation-delay: 0.5s;
     animation-timing-function: ease-out;
   }
 
-  &__logo {
-    height: 3.5rem;
+  &__logo-text {
+    font-size: 4rem;
+    color: $color-black;
+    margin: 0 1rem;
+    display: inline-block;
+  }
+
+  &__logo-alumni {
+    height: 7rem;
+    animation-name: moveInUp;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-timing-function: ease-out;
   }
 
   &__text-box {

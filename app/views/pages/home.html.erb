@@ -1,19 +1,49 @@
 <header class="header">
-
   <div class="bg-video">
     <%= video_tag(["video.mp4", "video.webm"], muted: true, loop: true, autoplay: true, class: "bg-video__content") %>
-
     <div class="header__logo-box">
-      <%= image_tag("logo-black-2.png", alt:"Wagon", class:"header__logo") %>
-      x
-      <%= image_tag("logo-alumni.png", alt:"Alumni", class:"header__logo") %>
+      <%= image_tag("logo-black-2.png", alt:"Wagon", class:"header__logo-wagon") %>
+      <h2 class="header__logo-text">x</h2>
+      <%= image_tag("logo-alumni.png", alt:"Alumni", class:"header__logo-alumni") %>
     </div>
     <div class="header__text-box">
       <h1 class="heading-primary">
-        Products
+        <!-- Products -->
       </h1>
     </div>
+  </div>
+</header>
 
+<section class="section-products">
+
+  <h2 class="heading-secondary">
+    What we achieved in 10 days
+  </h2>
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card">
+          <div class="card__side card__side--front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+            <!-- <div class="card-category">Popular</div>
+            <div class="card-description">
+              <h2>Le Wagon</h2>
+              <p>Very cool city</p>
+            </div>
+            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+            <a class="card-link" href="#" ></a>  -->
+          </div>
+          <div class="card__side card__side--back card__side--back-emea">
+            <!-- <div class="card-description">
+              <h2>Shanghai</h2>
+              <p>The best</p>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
-</header>
+</section>
