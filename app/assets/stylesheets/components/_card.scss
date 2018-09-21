@@ -2,10 +2,10 @@
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 52rem;
+  height: 35rem;
 
   &__side {
-    height: 52rem;
+    height: 35rem;
     color: white;
     position: absolute;
     transition: all .8s ease;
@@ -13,25 +13,30 @@
     left: 0;
     width: 100%;
     backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color-black-1, .15);
 
 
     &--front {
-      background-color: $color-primary-light;
+      background-color: $color-black-1;
     }
 
     &--back {
-      transform: rotateY(180deg);
+      z-index: -1;
+      background-color: $color-black-1;
+      // transform: rotateY(180deg);
 
       &-emea {
-        background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+        // background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
       }
 
       &-apac {
-        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+        // background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
       }
 
       &-amer{
-        background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+        // background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
       }
 
     }
@@ -39,57 +44,107 @@
   }
 
   &:hover &__side--front {
-    opacity: 0.1;
-    transform: rotateY(-180deg);
+    // opacity: 0.1;
+    transform: translateY(-1rem);
   }
 
   &:hover &__side--back {
-    transform: rotateY(0);
+    // transform: rotateY(0);
   }
 
   &__picture {
     background-size: cover;
     background-position: center;
-    height: 23rem;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    height: 30rem;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 90%);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 90%);
   }
 
   &__heading {
-    font-size: 2.8rem;
+    font-size: 1.5rem;
     font-weight: 300;
     text-transform: uppercase;
-    color: $color-white;
+    color: $color-black-1;
     position: absolute;
-    top: 12rem;
-    right: 2rem;
-    text-align: right;
+    top: 1rem;
+    left: 1rem;
+    text-align: left;
     width: 75%
   }
 
   &__heading-span {
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 0.5rem;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
 
     &--emea {
       background-image: linear-gradient(to right bottom,
-        rgba($color-primary-light, .85),
-        rgba($color-primary-dark, .85));
+        rgba($color-white-1, .85),
+        rgba($color-white-2, .85));
     }
   }
 
+  &__description {
+    font-size: 1rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    color: $color-white-1;
+    position: absolute;
+    top: 5rem;
+    left: 1rem;
+    text-align: left;
+    width: 75%
+  }
+
+  &__description-span {
+    padding: 0rem 0.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+    &--emea {
+      background-image: linear-gradient(to right bottom,
+        rgba($color-black-1, .85),
+        rgba($color-black-1, .85));
+    }
+  }
+
+  &__user {
+    position: absolute;
+    top: 27rem;
+    width: 3rem;
+    border-radius: 50%;
+
+    &--1 {
+      right: 1rem;
+    }
+
+    &--2 {
+      right: 3.5rem;
+    }
+
+    &--3 {
+      right: 6rem;
+    }
+
+    &--4 {
+      right: 8.5rem;
+    }
+
+  }
+
   &__details {
-    padding: 3rem;
+    padding: 1rem;
+    background-size: cover;
+    background-position: center;
 
     ul {
       list-style: none;
-      width: 80%;
+      width: 100%;
       margin: 0 auto;
 
       li {
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 1rem;
         padding: 1rem;
 
         &:not(:last-child) {
