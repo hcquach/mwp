@@ -10,24 +10,54 @@ require 'nokogiri'
 
 Product.destroy_all if Rails.env.development?
 
-batch = '173'
-product_name = 'gimme-shelter'
-url = "https://www.lewagon.com/demoday/#{batch}/#{product_name}"
+# Last batch number to end the loop
+last_batch = 1
 
-html_file = open(url).read
-html_doc = Nokogiri::HTML(html_file)
+# Loop through each batch
+for i in 1..last_batch do
 
-contents = html_doc.search("meta[name='description'], meta[property='og:url'], meta[property='og:image']").map { |n|
-  n['content']
-}
-description = contents.first.strip
-url = contents.second.strip
-image = contents.third.strip
+  batch_url = "https://www.lewagon.com/demoday/#{i}"
+  html_batch_file = open(batch_url).read
+  html_batch_doc = Nokogiri::HTML(html_batch_file)
 
-new_product = Product.new(name: product_name)
-new_product.batch = batch
-new_product.description = description
-new_product.site = url
-new_product.image = image
-new_product.save
-puts "New product added"
+  # Get each product url in an array
+  scraped_text = html_batch_doc.search('.container.demo-section').first.to_s.match(/products.*"students"/).to_s
+  products_url = scraped_text.split("slug")
+  products_url.shift
+  products_url.each do |element|
+    product_name = element.replace(element.match(/.*"url/).to_s[3..-7])
+
+    product_demoday_url = "https://www.lewagon.com/demoday/#{i}/#{product_name}"
+    html_product_file = open(product_demoday_url).read
+    html_product_doc = Nokogiri::HTML(html_product_file)
+
+    contents = html_product_doc.search("meta[name='description'], meta[property='og:url'], meta[property='og:image']").map { |n|
+      n['content']
+    }
+    product_description = contents.first.strip
+    product_url = contents.second.strip
+    product_image = contents.third.strip
+
+    new_product = Product.new(name: product_name)
+    new_product.batch = i
+    new_product.description = product_description
+    new_product.site = product_url
+    new_product.image = product_image
+    new_product.year = html_batch_doc.search('.container.demo-section').first.to_s.match(/ends_at.*meta/).to_s[-11..-8]
+    new_product.save
+    puts "New product added"
+  end
+
+end
+
+
+
+
+# batch = '173'
+# product_name = 'gimme-shelter'
+# url = "https://www.lewagon.com/demoday/#{batch}/#{product_name}"
+
+# html_file = open(url).read
+# html_doc = Nokogiri::HTML(html_file)
+
+
