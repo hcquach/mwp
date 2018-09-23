@@ -38,12 +38,15 @@ for i in 1..last_batch do
     product_url = contents.second.strip
     product_image = contents.third.strip
 
-    new_product = Product.new(name: product_name)
+    new_product = Product.new
+    new_product.name = html_product_doc.search('title').text.match(/.*- L/).to_s[0..-4].strip
     new_product.batch = i
+    new_product.city = html_product_doc.search('title').text.match(/Wagon.*Batch/).to_s[5..-8].strip
     new_product.description = product_description
     new_product.site = product_url
     new_product.image = product_image
     new_product.year = html_batch_doc.search('.container.demo-section').first.to_s.match(/ends_at.*meta/).to_s[-11..-8]
+    new_product.votes = 0
     new_product.save
     puts "New product added"
   end
