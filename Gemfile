@@ -16,6 +16,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+# gem 'net-ping', '~> 1.7', '>= 1.7.8'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

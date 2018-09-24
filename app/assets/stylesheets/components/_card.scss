@@ -2,13 +2,14 @@
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 35rem;
+  height: 37rem;
+  margin: 1rem 0;
+  transition: all .8s ease;
 
   &__side {
-    height: 35rem;
+    height: 37rem;
     color: white;
     position: absolute;
-    transition: all .8s ease;
     top: 0;
     left: 0;
     width: 100%;
@@ -18,38 +19,46 @@
     box-shadow: 0 1.5rem 4rem rgba($color-black-1, .15);
 
 
-    &--front {
+    &--front-offline {
       background-color: $color-black-1;
     }
 
-    &--back {
-      z-index: -1;
-      background-color: $color-black-1;
-      // transform: rotateY(180deg);
-
-      &-emea {
-        // background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
-      }
-
-      &-apac {
-        // background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
-      }
-
-      &-amer{
-        // background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
-      }
-
+    &--front-emea {
+      background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
     }
+
+    &--front-amer {
+      background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+    }
+
+    &--front-apac {
+      background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+    }
+
+    // &--back {
+    //   z-index: -1;
+    //   background-color: $color-black-1;
+    //   // transform: rotateY(180deg);
+
+    //   &-emea {
+    //     // background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+    //   }
+
+    //   &-apac {
+    //     // background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+    //   }
+
+    //   &-amer{
+    //     // background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+    //   }
+
+    // }
 
   }
 
-  &:hover &__side--front {
+  &:hover {
     // opacity: 0.1;
     transform: translateY(-1rem);
-  }
-
-  &:hover &__side--back {
-    // transform: rotateY(0);
   }
 
   &__picture {
@@ -62,80 +71,52 @@
 
   &__heading {
     font-size: 1.5rem;
-    font-weight: 300;
+    font-weight: 900;
     text-transform: uppercase;
     color: $color-black-1;
     position: absolute;
     top: 1rem;
     left: 1rem;
     text-align: left;
-    width: 75%
+    width: 90%
   }
 
   &__heading-span {
-    padding: 0.5rem 0.5rem;
+    padding: 0 0.5rem;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
-
-    &--emea {
-      background-image: linear-gradient(to right bottom,
+    background-image: linear-gradient(to right bottom,
         rgba($color-white-1, .85),
         rgba($color-white-2, .85));
-    }
   }
 
   &__description {
-    font-size: 1rem;
-    font-weight: 200;
+    font-size: 1.3rem;
+    font-weight: 400;
     text-transform: uppercase;
     color: $color-white-1;
     position: absolute;
     top: 5rem;
     left: 1rem;
     text-align: left;
-    width: 75%
+    width: 80%
   }
 
   &__description-span {
     padding: 0rem 0.5rem;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
-
-    &--emea {
-      background-image: linear-gradient(to right bottom,
+    background-image: linear-gradient(to right bottom,
         rgba($color-black-1, .85),
         rgba($color-black-1, .85));
-    }
-  }
-
-  &__user {
-    position: absolute;
-    top: 27rem;
-    width: 3rem;
-    border-radius: 50%;
-
-    &--1 {
-      right: 1rem;
-    }
-
-    &--2 {
-      right: 3.5rem;
-    }
-
-    &--3 {
-      right: 6rem;
-    }
-
-    &--4 {
-      right: 8.5rem;
-    }
-
   }
 
   &__details {
     padding: 1rem;
-    background-size: cover;
-    background-position: center;
+    // background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/paris');
+    // background-size: cover;
+    // background-position: center;
+    transform: translateY(-3.5rem);
 
     ul {
       list-style: none;
@@ -157,43 +138,50 @@
 
   }
 
+  &__users {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  &__user {
+    // position: absolute;
+    // bottom: 1rem;
+    height: 3rem;
+    width: 3rem;
+    position: relative;
+  }
+
+  &__img {
+    height: 100%;
+    border-radius: 50%;
+    transform: translateX(-0.1rem) scale(1.1);
+    transition: all .5s;
+    backface-visibility: hidden;
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: $color-white-1;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s;
+    backface-visibility: hidden;
+  }
+
+  &__user:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -30%);
+  }
+
+  &__user:hover &__img {
+    transform: translateX(-0.1rem) scale(1);
+    filter: blur(1px) brightness(70%);
+  }
 
 }
-// .card-user {
-//   position: absolute;
-//   right: 10px;
-//   top: 10px;
-//   width: 40px;
-//   border-radius: 50%;
-// }
-// .card-category {
-//   position: absolute;
-//   top: 10px;
-//   left: 10px;
-//   font-size: 15px;
-//   text-transform: uppercase;
-// }
-// .card-description {
-//   position: absolute;
-//   bottom: 10px;
-//   left: 10px;
-// }
-// .card-description h2 {
-//   font-size: 24px;
-// }
-// .card-description p {
-//   font-size: 14px;
-//   opacity: 0.7;
-//   font-weight: lighter;
-// }
-// .card-link {
-//   position: absolute;
-//   top: 0;
-//   bottom: 0;
-//   right: 0;
-//   width: 100%;
-//   z-index: 2;
-//   background: black;
-//   opacity: 0;
-// }
-

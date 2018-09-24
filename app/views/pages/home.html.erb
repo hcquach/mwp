@@ -23,59 +23,65 @@
   <div class="container">
     <div class="row">
 
+    <% Product.all.shuffle.each do |product| %>
       <div class="col-xs-12 col-sm-4 col-md-2">
         <div class="card">
-          <div class="card__side card__side--front">
-            <div class="card__picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/wagon/image/upload/v1536313429/ggi3qlipypx9x37vs3ba.jpg');">
-              &nbsp
+
+          <% if !product.online %>
+             <div class='card__side card__side--front-offline'>
+          <% elsif ["Paris", "Bordeaux", "Lille", "Lyon", "Marseille", "Nantes", "London", "Berlin", "Amsterdam", "Barcelona", "Brussels", "Copenhagen", "Lisbon", "Milan", "Lausanne", "Casablanca", "Tel Aviv"].include?(product.city.capitalize) %>
+             <div class='card__side card__side--front-emea'>
+          <% elsif ["Melbourne", "Bali", "Chengdu", "Shanghai", "Shenzhen", "Tokyo", "Kyoto"].include?(product.city.capitalize) %>
+             <div class='card__side card__side--front-apac'>
+          <% elsif ["Montréal", "Rio de Janeiro", "Belo Horizonte", "São Paulo", "Mexico", "Buenos Aires"].include?(product.city.capitalize) %>
+             <div class='card__side card__side--front-amer'>
+          <% end %>
+
+          <% if product.online %>
+            <a href="<%= product.site %>">
+          <% end %>
+
+            <div class="card__side card__side--front">
+              <div class="card__picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= product.image %>');">
+                &nbsp
+              </div>
+              <h4 class="card__heading">
+                <span class="card__heading-span">
+                  <%= product.name.capitalize %>
+                </span>
+              </h4>
+              <h4 class="card__description">
+                <span class="card__description-span">
+                  <%= product.description %>
+                </span>
+              </h4>
+              <div class="card__details">
+                <ul>
+                  <li><%= product.city %> - <%= product.year %> - Batch #<%= product.batch %></li>
+                </ul>
+                <div class="card__users">
+                  <% product.alumnis.each do |alumni| %>
+                    <figure class="card__user">
+                      <img class="card__img" alt="Alumni" src="<%= alumni.photo %>">
+                      <figcaption class="card__caption">
+                        <%= alumni.name %>
+                      </figcaption>
+                    </figure>
+                  <% end %>
+                </div>
+              </div>
             </div>
-            <h4 class="card__heading">
-              <span class="card__heading-span card__heading-span--emea">
-                Gimme Shelter
-              </span>
-            </h4>
-            <h4 class="card__description">
-              <span class="card__description-span card__description-span--emea">
-                Helping to break the cycle of homelessness
-              </span>
-            </h4>
-            <img class="card__user card__user--1" src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/ya4d3ybhvvfbkdg7ju45.jpg">
-            <!-- <span class="card__user-span">
-                Jess Lee
-            </span> -->
-            <img class="card__user card__user--2" src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/vmb87l47rvatbv0gmliy.jpg">
-            <!-- <span class="card__user-span">
-                Ben Herring
-            </span> -->
-            <img class="card__user card__user--3" src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/ya4d3ybhvvfbkdg7ju45.jpg">
-            <!-- <span class="card__user-span">
-                Jess Lee
-            </span> -->
-            <img class="card__user card__user--4" src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/vmb87l47rvatbv0gmliy.jpg">
-            <!-- <span class="card__user-span">
-                Ben Herring
-            </span> -->
-            <div class="card__details">
-              <ul>
-                <li>London - 2018 - Batch #173</li>
-              </ul>
-            </div>
-            <!-- <div class="card-category">Popular</div>
-            <div class="card-description">
-              <h2>Le Wagon</h2>
-              <p>Very cool city</p>
-            </div>
-            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-            <a class="card-link" href="#" ></a>  -->
+
+            </a>
+
           </div>
-          <div class="card__side card__side--back card__side--back-emea">
-            <!-- <div class="card-description">
-              <h2>Shanghai</h2>
-              <p>The best</p>
-            </div> -->
-          </div>
+
+          <!-- <div class="card__side card__side--back card__side--back-emea">
+          </div> -->
+
         </div>
       </div>
+    <% end %>
 
     </div>
   </div>
