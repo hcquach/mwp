@@ -29,11 +29,11 @@
 
           <% if !product.online %>
              <div class='card__side card__side--front-offline'>
-          <% elsif ["Paris", "Bordeaux", "Lille", "Lyon", "Marseille", "Nantes", "London", "Berlin", "Amsterdam", "Barcelona", "Brussels", "Copenhagen", "Lisbon", "Milan", "Lausanne", "Casablanca", "Tel Aviv"].include?(product.city.capitalize) %>
+          <% elsif ["Paris", "Bordeaux", "Lille", "Lyon", "Marseille", "Nantes", "London", "Berlin", "Amsterdam", "Barcelona", "Brussels", "Copenhagen", "Lisbon", "Milan", "Lausanne", "Casablanca", "Tel Aviv"].include?(product.city) %>
              <div class='card__side card__side--front-emea'>
-          <% elsif ["Melbourne", "Bali", "Chengdu", "Shanghai", "Shenzhen", "Tokyo", "Kyoto"].include?(product.city.capitalize) %>
+          <% elsif ["Melbourne", "Bali", "Chengdu", "Shanghai", "Shenzhen", "Tokyo", "Kyoto"].include?(product.city) %>
              <div class='card__side card__side--front-apac'>
-          <% elsif ["Montréal", "Rio de Janeiro", "Belo Horizonte", "São Paulo", "Mexico", "Buenos Aires"].include?(product.city.capitalize) %>
+          <% elsif ["Montréal", "Rio de Janeiro", "Belo Horizonte", "São Paulo", "Mexico", "Buenos Aires"].include?(product.city) %>
              <div class='card__side card__side--front-amer'>
           <% end %>
 

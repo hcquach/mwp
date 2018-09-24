@@ -61,7 +61,7 @@ for i in 41..last_batch do
       new_product.online = false
     end
     new_product.image = product_image
-    new_product.year = html_batch_doc.search('.container.demo-section').first.to_s.gsub(/&quot;/, '"').match(/ends_at.*meta/).to_s[-11..-8]
+    new_product.year = html_batch_doc.search('.container.demo-section').first.to_s.gsub(/&quot;/, '"').match(/ends_at.*meta_/).to_s[-12..-9]
     new_product.votes = 0
     new_product.save
     puts "New product added"
