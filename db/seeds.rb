@@ -13,10 +13,10 @@ require "net/http"
 # Product.destroy_all if Rails.env.development?
 
 # Last batch number to end the loop
-last_batch = 100
+last_batch = 178
 
 # Loop through each batch
-for i in 41..last_batch do
+for i in 177..last_batch do
 
   batch_url = "https://www.lewagon.com/demoday/#{i}"
 
@@ -32,12 +32,12 @@ for i in 41..last_batch do
 
   # Get each product url in an array
   scraped_text = html_batch_doc.search('.container.demo-section').first.to_s.gsub(/&quot;/, '"').match(/products.*"students"/).to_s
-  products_url = scraped_text.split("slug")
+  products_url = scraped_text.split(/"slug\"/)
   products_url.shift
   products_url.each do |element|
 
     product_url = element.match(/url.*tagline/).to_s[6..-11]
-    product_name = element.match(/.*"url/).to_s[3..-7]
+    product_name = element.match(/.*"url/).to_s[2..-7].gsub(" ", "%20")
 
     product_demoday_url = "https://www.lewagon.com/demoday/#{i}/#{product_name}"
     html_product_file = open(product_demoday_url).read
@@ -52,7 +52,7 @@ for i in 41..last_batch do
     new_product = Product.new
     new_product.name = html_product_doc.search('title').text.match(/.*- L/).to_s[0..-4].strip
     new_product.batch = i
-    new_product.city = html_product_doc.search('title').text.match(/Wagon.*Batch/).to_s[5..-8].strip
+    new_product.city = html_product_doc.search('title').text.match(/- Le Wagon.*Batch/).to_s[10..-8].strip
     new_product.description = product_description
     new_product.site = product_url
     begin

@@ -2,12 +2,12 @@
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 37rem;
+  height: 38rem;
   margin: 1rem 0;
   transition: all .8s ease;
 
   &__side {
-    height: 37rem;
+    height: 38rem;
     color: white;
     position: absolute;
     top: 0;
@@ -96,7 +96,7 @@
     text-transform: uppercase;
     color: $color-white-1;
     position: absolute;
-    top: 5rem;
+    top: 6rem;
     left: 1rem;
     text-align: left;
     width: 80%
