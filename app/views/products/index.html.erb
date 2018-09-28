@@ -1,3 +1,25 @@
+<section class="section-sidebar">
+
+  <%= form_tag products_path, method: :get do %>
+    <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search a product"
+    %>
+  <% end %>
+
+  <div class="categories">
+    <ul>
+      <li>Most Popular</li>
+      <li>Most Recent</li>
+      <li>City</li>
+      <li>Year</li>
+      <li>Graveyard</li>
+    </ul>
+  </div>
+
+</section>
+
 <header class="header">
   <div class="bg-video">
     <%= video_tag(["video.mp4", "video.webm"], muted: true, loop: true, autoplay: true, class: "bg-video__content") %>
@@ -12,85 +34,84 @@
       </h1>
     </div>
   </div>
+
 </header>
 
-<section class="section-search">
-  <%= form_tag(root_path, method: :get) do %>
-  <%= text_field_tag :keyword %>
-  <%= submit_tag 'Search' %>
-  <% end %>
-</section>
 
-<section class="section-products">
+  <section class="section-products">
 
-  <h2 class="heading-secondary">
-    What we achieved in 10 days
-  </h2>
+    <h2 class="heading-secondary">
+      What we achieved in 10 days
+    </h2>
 
-  <div class="container">
-    <div class="row">
+<!--     <div class="container"> -->
+      <div class="row">
 
-    <% Product.all.shuffle.each do |product| %>
-      <div class="col-xs-12 col-sm-4 col-md-2">
-        <div class="card">
+      <% @products[0..3].each do |product| %>
+        <div class="col-xs-12 col-sm-4 col-md-3">
+          <div class="card">
 
-          <% if !product.online %>
-             <div class='card__side card__side--front-offline'>
-          <% elsif ["Paris", "Bordeaux", "Lille", "Lyon", "Marseille", "Nantes", "London", "Berlin", "Amsterdam", "Barcelona", "Brussels", "Copenhagen", "Lisbon", "Milan", "Lausanne", "Casablanca", "Tel Aviv"].include?(product.city) %>
-             <div class='card__side card__side--front-emea'>
-          <% elsif ["Melbourne", "Bali", "Chengdu", "Shanghai", "Shenzhen", "Tokyo", "Kyoto"].include?(product.city) %>
-             <div class='card__side card__side--front-apac'>
-          <% elsif ["Montréal", "Rio de Janeiro", "Belo Horizonte", "São Paulo", "Mexico", "Buenos Aires"].include?(product.city) %>
-             <div class='card__side card__side--front-amer'>
-          <% end %>
+            <% if !product.online %>
+               <div class='card__side card__side--front-offline'>
+            <% elsif ["Paris", "Bordeaux", "Lille", "Lyon", "Marseille", "Nantes", "London", "Berlin", "Amsterdam", "Barcelona", "Brussels", "Copenhagen", "Lisbon", "Milan", "Lausanne", "Casablanca", "Tel Aviv"].include?(product.city) %>
+               <div class='card__side card__side--front-emea'>
+            <% elsif ["Melbourne", "Bali", "Chengdu", "Shanghai", "Shenzhen", "Tokyo", "Kyoto"].include?(product.city) %>
+               <div class='card__side card__side--front-apac'>
+            <% elsif ["Montréal", "Rio de Janeiro", "Belo Horizonte", "São Paulo", "Mexico", "Buenos Aires"].include?(product.city) %>
+               <div class='card__side card__side--front-amer'>
+            <% end %>
 
-          <% if product.online %>
-            <a href="<%= product.site %>">
-          <% end %>
+            <% if product.online %>
+              <a href="<%= product.site %>">
+            <% end %>
 
-            <div class="card__side card__side--front">
-              <div class="card__picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= product.image %>');">
-                &nbsp
-              </div>
-              <h4 class="card__heading">
-                <span class="card__heading-span">
-                  <%= product.name.capitalize %>
-                </span>
-              </h4>
-              <h4 class="card__description">
-                <span class="card__description-span">
-                  <%= product.description %>
-                </span>
-              </h4>
-              <div class="card__details">
-                <ul>
-                  <li><%= product.city %> - <%= product.year %><br>Batch #<%= product.batch %></li>
-                </ul>
-                <div class="card__users">
-                  <% product.alumnis.each do |alumni| %>
-                    <figure class="card__user">
-                      <img class="card__img" alt="Alumni" src="<%= alumni.photo %>">
-                      <figcaption class="card__caption">
-                        <%= alumni.name %>
-                      </figcaption>
-                    </figure>
-                  <% end %>
+              <div class="card__side card__side--front">
+                <div class="card__picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= product.image %>');">
+                  &nbsp
+                </div>
+                <h4 class="card__heading">
+                  <span class="card__heading-span">
+                    <%= product.name.capitalize %>
+                  </span>
+                </h4>
+                <h4 class="card__description">
+                  <span class="card__description-span">
+                    <%= product.description %>
+                  </span>
+                </h4>
+                <div class="card__details">
+                  <ul>
+                    <li><%= product.city %> - <%= product.year %><br>Batch #<%= product.batch %></li>
+                  </ul>
+                  <div class="card__users">
+                    <% product.alumnis.each do |alumni| %>
+                      <figure class="card__user">
+                        <img class="card__img" alt="Alumni" src="<%= alumni.photo %>">
+                        <figcaption class="card__caption">
+                          <%= alumni.name %>
+                        </figcaption>
+                      </figure>
+                    <% end %>
+                  </div>
+                  <div class="card__upvote">
+                    <div class="card__arrow"></div>
+                    <div class='card__count'><%= product.votes || 0 %></div>
+                  </div>
                 </div>
               </div>
+
+              </a>
+
             </div>
 
-            </a>
+            <!-- <div class="card__side card__side--back card__side--back-emea">
+            </div> -->
 
           </div>
-
-          <!-- <div class="card__side card__side--back card__side--back-emea">
-          </div> -->
-
         </div>
+      <% end %>
+
       </div>
-    <% end %>
+<!--     </div> -->
 
-    </div>
-  </div>
-
-</section>
+  </section>
