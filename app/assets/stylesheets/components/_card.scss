@@ -138,10 +138,16 @@
 
   }
 
+   &__subdetails {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1rem;
+  }
+
   &__users {
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
   &__user {
@@ -203,7 +209,7 @@
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
     border-top: 6px solid transparent;
-    border-bottom: 9px solid black;
+    border-bottom: 9px solid $color-white-1;
     border-radius: 2px;
     margin: auto;
   }
