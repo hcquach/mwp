@@ -17,6 +17,7 @@ gem 'uglifier'
 gem 'webpacker'
 
 # gem 'net-ping', '~> 1.7', '>= 1.7.8'
+gem 'will_paginate_infinite'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
