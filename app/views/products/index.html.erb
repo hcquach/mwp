@@ -44,77 +44,12 @@
     What we achieved in 10 days
   </h2>
 
-<!--     <div class="container"> -->
   <div class="row">
-
     <% @products.each do |product| %>
-      <div class="col-xs-12 col-sm-4 col-md-3">
-        <div class="card">
-
-          <% if !product.online %>
-             <div class='card__side card__side--front-offline'>
-          <% elsif ["Paris", "Bordeaux", "Lille", "Lyon", "Marseille", "Nantes", "London", "Berlin", "Amsterdam", "Barcelona", "Brussels", "Copenhagen", "Lisbon", "Milan", "Lausanne", "Casablanca", "Tel Aviv"].include?(product.city) %>
-             <div class='card__side card__side--front-emea'>
-          <% elsif ["Melbourne", "Bali", "Chengdu", "Shanghai", "Shenzhen", "Tokyo", "Kyoto"].include?(product.city) %>
-             <div class='card__side card__side--front-apac'>
-          <% elsif ["Montréal", "Rio de Janeiro", "Belo Horizonte", "São Paulo", "Mexico", "Buenos Aires"].include?(product.city) %>
-             <div class='card__side card__side--front-amer'>
-          <% end %>
-
-          <% if product.online %>
-            <a href="<%= product.site %>">
-          <% end %>
-
-            <div class="card__side card__side--front">
-              <div class="card__picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= product.image %>');">
-                &nbsp
-              </div>
-              <h4 class="card__heading">
-                <span class="card__heading-span">
-                  <%= product.name.capitalize %>
-                </span>
-              </h4>
-              <h4 class="card__description">
-                <span class="card__description-span">
-                  <%= product.description %>
-                </span>
-              </h4>
-              <div class="card__details">
-                <ul>
-                  <li><%= product.city %> <%= product.year %> - Batch #<%= product.batch %></li>
-                </ul>
-                <div class="card__subdetails">
-                  <div class="card__users">
-                    <% product.alumnis.each do |alumni| %>
-                      <figure class="card__user">
-                        <img class="card__img" alt="Alumni" src="<%= alumni.photo %>">
-                        <figcaption class="card__caption">
-                          <%= alumni.name %>
-                        </figcaption>
-                      </figure>
-                    <% end %>
-                  </div>
-
-                  <div class="card__upvote">
-                      <div class="card__arrow"></div>
-                      <div class='card__count'><%= product.votes || 0 %></div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-
-            </a>
-
-          </div>
-
-
-
-        </div>
-      </div>
+      <%= render product %>
     <% end %>
-
   </div>
 
-  <%#= will_paginate @products, renderer: WillPaginateInfinite::InfinitePagination %>
+  <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
 
 </section>
