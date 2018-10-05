@@ -11,4 +11,7 @@ function infiniteScroll() {
   }
 }
 
-infiniteScroll();
+ScrollReveal().reveal('.card');
+// ScrollReveal().reveal('.card__heading', { delay: 500 });
+// ScrollReveal().reveal('.card__description', { delay: 1000 });
+// ScrollReveal().reveal('.card__subdetails', { delay: 2000 });

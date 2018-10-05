@@ -28,38 +28,6 @@ body {
   position: relative;
   margin-left: $side-bar-size;
 
-  &__logo-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    text-align: center;
-  }
-
-  &__logo-wagon {
-    height: 7rem;
-    animation-name: moveInDown;
-    animation-duration: 1s;
-    animation-delay: 0.5s;
-    animation-timing-function: ease-out;
-  }
-
-  &__logo-text {
-    font-size: 4rem;
-    color: $color-black-1;
-    margin: 0 1rem;
-    display: inline-block;
-  }
-
-  &__logo-alumni {
-    height: 7rem;
-    animation-name: moveInUp;
-    animation-duration: 1s;
-    animation-delay: 0.5s;
-    animation-timing-function: ease-out;
-  }
-
   &__text-box {
     position: absolute;
     top: 40%;
@@ -90,6 +58,62 @@ body {
   bottom: 0px;
   width: $side-bar-size;
   text-align: center;
+}
+
+.sidebar {
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &__logo-box {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+  }
+
+  &__logo-wagon {
+    height: 2rem;
+    animation-name: moveInDown;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-timing-function: ease-out;
+  }
+
+  &__logo-alumni {
+    height: 2rem;
+    animation-name: moveInUp;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-timing-function: ease-out;
+  }
+
+  &__logo-text {
+    font-size: 2rem;
+    color: $color-black-1;
+    margin: 0 0.5rem;
+    display: inline-block;
+  }
+
+  &__search {
+    position: absolute;
+    width: 90%;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__categories {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    width: 100%;
+    text-align: left;
+  }
+
 }
 
 @keyframes moveInDown {
