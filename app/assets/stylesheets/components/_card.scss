@@ -2,12 +2,12 @@
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 38rem;
+  height: 36rem;
   margin: 1rem 0;
   transition: all .8s ease;
 
   &__side {
-    height: 38rem;
+    height: 36rem;
     color: white;
     position: absolute;
     top: 0;
@@ -139,15 +139,12 @@
   }
 
    &__subdetails {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 1rem;
   }
 
   &__users {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: flex-end;
+    align-items: flex-end;
   }
 
   &__user {

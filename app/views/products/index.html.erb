@@ -6,7 +6,6 @@
       <h2 class="sidebar__logo-text">x</h2>
 
       <%= image_tag("logo-hc.jpeg", alt:"Alumni", id:"logo-alumni") %>
-      <%#= image_tag(@products.first.alumnis.first.photo, alt:"Alumni", id:"logo-alumni") %>
 
     </div>
 
@@ -22,8 +21,6 @@
 
     <div class="sidebar__categories">
       <ul>
-        <li>Most Popular</li>
-        <li>Most Recent</li>
         <li>City</li>
         <li>Year</li>
         <li><a href="/?online=false">Graveyard</a></li>
@@ -36,10 +33,10 @@
 
 <header class="header">
   <div class="bg-video">
-    <%= video_tag(["video.mp4", "video.webm"], muted: true, loop: true, autoplay: true, class: "bg-video__content") %>
+    <%= video_tag(["video-background"], muted: true, loop: true, autoplay: true, class: "bg-video__content") %>
     <div class="header__text-box">
       <h1 class="heading-primary">
-        <!-- Products -->
+        We build products in 10 days
       </h1>
     </div>
   </div>
