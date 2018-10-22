@@ -19,14 +19,15 @@ body {
   // font-size: 16px;
   line-height: 1.7;
   color: #777;
-  padding: 3rem;
+  // padding: 3rem;
+  padding: 1rem;
   box-sizing: border-box;
 }
 
 .header {
-  height: 90vh;
+  height: 95vh;
   position: relative;
-  margin-left: $side-bar-size;
+  // margin-left: $side-bar-size;
 
   &__text-box {
     position: absolute;
@@ -46,18 +47,29 @@ body {
   letter-spacing: 3.5rem;
 }
 
+.heading-secondary {
+  color: black;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 2.5rem;
+  text-align: right;
+}
+
 .section-products {
   margin-left: $side-bar-size;
 }
 
 .section-sidebar {
-  background-color: #384047;
+  // background-color: #384047;
+  background-color: rgba(255, 255, 255, 0.7);
   position: fixed;
   left: 0px;
   top: 0px;
   bottom: 0px;
   width: $side-bar-size;
   text-align: center;
+  z-index: 999;
 }
 
 .sidebar {
@@ -68,7 +80,7 @@ body {
 
   &__logo-box {
     position: absolute;
-    top: 5%;
+    bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
@@ -76,15 +88,17 @@ body {
   }
 
   &__logo-wagon {
-    height: 2rem;
+    height: 5rem;
+    border-radius: 50%;
     animation-name: moveInDown;
     animation-duration: 1s;
     animation-delay: 0.5s;
     animation-timing-function: ease-out;
   }
 
-  &__logo-alumni {
-    height: 2rem;
+  #logo-alumni {
+    height: 5rem;
+    border-radius: 50%;
     animation-name: moveInUp;
     animation-duration: 1s;
     animation-delay: 0.5s;
@@ -100,10 +114,10 @@ body {
 
   &__search {
     position: absolute;
-    width: 90%;
+    width: 80%;
     top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
+    padding-right: 1rem;
+    right: 1px;
   }
 
   &__categories {
@@ -119,11 +133,7 @@ body {
   }
 
   li {
-    color: $color-white-1;
-  }
-
-  a:link, a:visited {
-    text-decoration: none;
+    color: $color-black-1;
   }
 
 }

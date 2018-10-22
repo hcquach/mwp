@@ -2,9 +2,12 @@
 
   <div class="sidebar">
     <div class="sidebar__logo-box">
-      <%= image_tag("logo-black-2.png", alt:"Wagon", class:"sidebar__logo-wagon") %>
+      <%= image_tag("logo-le-wagon.jpg", alt:"Wagon", class:"sidebar__logo-wagon") %>
       <h2 class="sidebar__logo-text">x</h2>
-      <%= image_tag("logo-alumni.png", alt:"Alumni", class:"sidebar__logo-alumni") %>
+
+      <%= image_tag("logo-hc.jpeg", alt:"Alumni", id:"logo-alumni") %>
+      <%#= image_tag(@products.first.alumnis.first.photo, alt:"Alumni", id:"logo-alumni") %>
+
     </div>
 
     <div class="sidebar__search">
@@ -12,7 +15,7 @@
         <%= text_field_tag :query,
         params[:query],
         class: "form-control",
-        placeholder: "Search a product"
+        placeholder: "Search"
         %>
       <% end %>
     </div>
@@ -47,7 +50,7 @@
 <section class="section-products">
 
   <h2 class="heading-secondary">
-    What we achieved in 10 days
+    All Wagon Products
   </h2>
 
   <div class="row">
