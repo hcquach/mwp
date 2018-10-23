@@ -16,10 +16,8 @@ html {
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  // font-size: 16px;
   line-height: 1.7;
   color: #777;
-  // padding: 3rem;
   padding: 1rem;
   box-sizing: border-box;
 }
@@ -27,7 +25,6 @@ body {
 .header {
   height: 95vh;
   position: relative;
-  // margin-left: $side-bar-size;
 
   &__text-box {
     position: absolute;
@@ -39,7 +36,6 @@ body {
   }
 
 }
-
 
 .heading-primary {
     color: $color-white-1;;
@@ -71,7 +67,6 @@ body {
 }
 
 .section-sidebar {
-  // background-color: #384047;
   background-color: rgba(255, 255, 255, 0.7);
   position: fixed;
   left: 0px;
@@ -223,6 +218,28 @@ body {
   }
 }
 
+@media only screen and (max-width: 1200px) {
+  html {
+    font-size: 56.25%;
+  }
+}
 
+@media only screen and (max-width: 900px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 37.5%;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  html {
+    font-size: 75%;
+  }
+}
 
 
