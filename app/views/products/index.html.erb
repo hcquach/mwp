@@ -39,8 +39,12 @@
     <%= video_tag(["video-background"], muted: true, loop: true, autoplay: true, class: "bg-video__content") %>
     <div class="header__text-box">
       <h1 class="heading-primary">
-        We are<br>Le Wagon students<br>
-        And we build products in 10 days
+        <div class="heading-primary--1">
+          We are<br><span class="heading-primary-subtitle">Le Wagon students</span><br>
+        </div>
+        <div class="heading-primary--2">
+          We build<br><span class="heading-primary-subtitle">products in 10 days</span>
+        </div>
       </h1>
     </div>
   </div>

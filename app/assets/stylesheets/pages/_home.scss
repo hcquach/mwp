@@ -31,20 +31,30 @@ body {
 
   &__text-box {
     position: absolute;
-    top: 40%;
-    left: 50%;
+    top: 45%;
+    left: 40%;
     transform: translate(-50%, -50%);
+    text-align: right;
+    width: 100%;
   }
 
 }
 
 
 .heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 4rem;
-  font-weight: 400;
-  letter-spacing: 1rem;
+    color: $color-white-1;;
+    text-transform: uppercase;
+    font-size: 7rem;
+    font-weight: 500;
+    letter-spacing: 1rem;
+
+  .heading-primary--1 {
+    margin: 4rem 0;
+  }
+
+  .heading-primary-subtitle {
+    font-size: 4rem;
+  }
 }
 
 .heading-secondary {
