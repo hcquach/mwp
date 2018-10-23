@@ -191,6 +191,44 @@ body {
 
 }
 
+.pagination {
+  background: $color-white-1;
+  border: 1px solid $gray;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 300;
+  padding: 1em;
+  cursor: default;
+  float: right;
+}
+
+.pagination a, .pagination span {
+  padding: 0.2em 0.3em;
+}
+.pagination .disabled {
+  color: #aaaaaa;
+}
+.pagination .current {
+  background-color: $color-black-1;
+  color: $color-white-1;
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  line-height: 1.5;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  border-radius: 50%;
+  text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px;
+}
+.pagination a {
+  text-decoration: none;
+  color: $color-black-1;
+}
+.pagination a:hover, .pagination a:focus {
+  text-decoration: underline;
+}
+
 // Transitions
 @keyframes moveInDown {
   0% {
