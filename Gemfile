@@ -17,11 +17,10 @@ gem 'uglifier'
 gem 'webpacker'
 
 gem 'popper_js', '~> 1.9', '>= 1.9.9'
-gem 'rails_12factor', group: :production
 
 # gem 'net-ping', '~> 1.7', '>= 1.7.8'
-gem 'will_paginate', '~> 3.1', '>= 3.1.6'
-gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
+# gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+# gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
