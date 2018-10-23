@@ -20,7 +20,7 @@ default_product_image = "https://dwj199mwkel52.cloudfront.net/assets/social/home
 default_alumni_avatar = "https://pbs.twimg.com/profile_images/803890656410095616/rOhjFcOP_400x400.jpg"
 
 # Loop through each batch
-for i in 1..last_batch do
+for i in 75..last_batch do
 
   batch_url = "https://www.lewagon.com/demoday/#{i}"
 
