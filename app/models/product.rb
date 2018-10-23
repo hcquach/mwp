@@ -5,6 +5,4 @@ class Product < ApplicationRecord
   scope :year, -> (year) { where year: year }
   scope :online, -> (online) { where online: online }
 
-  self.per_page = 20
-
 end
