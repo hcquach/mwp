@@ -1,3 +1,4 @@
+// Card design
 .card {
   perspective: 150rem;
   -moz-perspective: 150rem;
@@ -35,29 +36,9 @@
       background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
     }
 
-    // &--back {
-    //   z-index: -1;
-    //   background-color: $color-black-1;
-    //   // transform: rotateY(180deg);
-
-    //   &-emea {
-    //     // background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
-    //   }
-
-    //   &-apac {
-    //     // background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
-    //   }
-
-    //   &-amer{
-    //     // background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
-    //   }
-
-    // }
-
   }
 
   &:hover {
-    // opacity: 0.1;
     transform: translateY(-1rem);
   }
 
@@ -113,9 +94,6 @@
 
   &__details {
     padding: 1rem;
-    // background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/paris');
-    // background-size: cover;
-    // background-position: center;
     transform: translateY(-3.5rem);
 
     ul {
@@ -148,8 +126,6 @@
   }
 
   &__user {
-    // position: absolute;
-    // bottom: 1rem;
     height: 3rem;
     width: 3rem;
     position: relative;
@@ -185,30 +161,6 @@
   &__user:hover &__img {
     transform: translateX(-0.1rem) scale(1);
     filter: blur(1px) brightness(70%);
-  }
-
-  /* Upvote design */
-  &__upvote {
-    padding-right: 20px;
-    text-align: center;
-    transition: all 0.15s ease;
-    font-weight: bold;
-    font-size: 13px;
-    line-height: 20px;
-  }
-  &__count {
-    margin: 2px 0 0;
-  }
-  &__arrow {
-    transition: all 0.15s ease;
-    width: 0;
-    height: 0;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-top: 6px solid transparent;
-    border-bottom: 9px solid $color-white-1;
-    border-radius: 2px;
-    margin: auto;
   }
 
 }

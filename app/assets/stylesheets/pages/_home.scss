@@ -1,4 +1,6 @@
 // Specific CSS for your home-page
+
+// Side bar size
 $side-bar-size: 20rem;
 
 *,
@@ -22,6 +24,7 @@ body {
   box-sizing: border-box;
 }
 
+// Header with video and title
 .header {
   height: 95vh;
   position: relative;
@@ -62,10 +65,12 @@ body {
   text-align: right;
 }
 
+// Section for all products
 .section-products {
   margin-left: calc(#{$side-bar-size} + 1rem);
 }
 
+// Section for the sidebar
 .section-sidebar {
   background-color: rgba(255, 255, 255, 0.7);
   position: fixed;
@@ -78,7 +83,6 @@ body {
 }
 
 .sidebar {
-
   position: relative;
   width: 100%;
   height: 100%;
@@ -186,6 +190,7 @@ body {
 
 }
 
+// Transitions
 @keyframes moveInDown {
   0% {
     opacity: 0;
@@ -218,6 +223,7 @@ body {
   }
 }
 
+// Media Queries
 @media only screen and (max-width: 1200px) {
   html {
     font-size: 56.25%;
