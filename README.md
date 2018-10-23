@@ -1,1 +1,2 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+# All Wagon Products 🚌
+Simple webpage to display all products built in 10 days by the Wagon alumnis.
