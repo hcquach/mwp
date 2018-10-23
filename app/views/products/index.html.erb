@@ -1,13 +1,6 @@
 <section class="section-sidebar">
 
   <div class="sidebar">
-    <div class="sidebar__logo-box">
-      <%= image_tag("logo-le-wagon.jpg", alt:"Wagon", class:"sidebar__logo-wagon") %>
-      <h2 class="sidebar__logo-text">x</h2>
-
-      <%= image_tag("logo-hc.jpeg", alt:"Alumni", id:"logo-alumni") %>
-
-    </div>
 
     <div class="sidebar__search">
       <%= form_tag products_path, method: :get do %>
@@ -23,8 +16,19 @@
       <ul>
         <li>City</li>
         <li>Year</li>
+        <li><a href="/?online=true">Active</a></li>
         <li><a href="/?online=false">Graveyard</a></li>
       </ul>
+    </div>
+
+    <div class="sidebar__logo-box">
+      <%= image_tag("logo-le-wagon.jpg", alt:"Wagon", class:"sidebar__logo-wagon") %>
+      <h2 class="sidebar__logo-text">x</h2>
+      <%= image_tag("logo-hc.jpeg", alt:"Alumni", id:"logo-alumni") %>
+    </div>
+
+    <div class="sidebar__uparrow">
+      <a href='#top'><i class="fas fa-arrow-circle-up"></i></a>
     </div>
 
   </div>
@@ -32,11 +36,12 @@
 </section>
 
 <header class="header">
-  <div class="bg-video">
+  <div name="top" class="bg-video">
     <%= video_tag(["video-background"], muted: true, loop: true, autoplay: true, class: "bg-video__content") %>
     <div class="header__text-box">
       <h1 class="heading-primary">
-        We build products in 10 days
+        We are<br>Le Wagon students<br>
+        And we build products in 10 days
       </h1>
     </div>
   </div>
@@ -51,11 +56,11 @@
   </h2>
 
   <div class="row">
-    <% @products.each do |product| %>
+    <% @products.reverse.each do |product| %>
       <%= render product %>
     <% end %>
   </div>
 
-  <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+  <%#= will_paginate @products, renderer: BootstrapPagination::Rails %>
 
 </section>

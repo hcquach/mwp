@@ -9,14 +9,18 @@ require 'open-uri'
 require 'nokogiri'
 require "net/http"
 
-# Alumni.destroy_all if Rails.env.development?
-# Product.destroy_all if Rails.env.development?
+Alumni.destroy_all if Rails.env.development?
+Product.destroy_all if Rails.env.development?
 
 # Last batch number to end the loop
-last_batch = 178
+last_batch = 70
+
+# Default photo
+default_product_image = "https://dwj199mwkel52.cloudfront.net/assets/social/home_facebook_card-c24af70e1ea78ec96cdf28f926fc76eb3ce3ecaf973042255492aa1de7727393.jpg"
+default_alumni_avatar = "https://pbs.twimg.com/profile_images/803890656410095616/rOhjFcOP_400x400.jpg"
 
 # Loop through each batch
-for i in 177..last_batch do
+for i in 60..last_batch do
 
   batch_url = "https://www.lewagon.com/demoday/#{i}"
 
@@ -60,7 +64,11 @@ for i in 177..last_batch do
     rescue
       new_product.online = false
     end
-    new_product.image = product_image
+    begin
+      new_product.image = product_image if open(product_image).read
+    rescue
+      new_product.image = default_product_image
+    end
     new_product.year = html_batch_doc.search('.container.demo-section').first.to_s.gsub(/&quot;/, '"').match(/ends_at.*meta_/).to_s[-12..-9]
     new_product.votes = 0
     new_product.save
@@ -70,7 +78,12 @@ for i in 177..last_batch do
       new_alumni_name = alumni.match(/name.*official*/).to_s[7..-12]
       if new_alumni_name
         new_alumni = Alumni.new(name: new_alumni_name)
-        new_alumni.photo = alumni.match(/avatar_url.*hide/).to_s[13..-8]
+        new_avatar_url = alumni.match(/avatar_url.*hide/).to_s[13..-8]
+        begin
+          new_alumni.photo = new_avatar_url if open(new_avatar_url).read
+        rescue
+          new_alumni.photo = default_alumni_avatar
+        end
         new_alumni.product_id = new_product.id
         new_alumni.save
         puts "New alumni added"

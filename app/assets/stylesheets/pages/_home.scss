@@ -136,6 +136,16 @@ body {
     color: $color-black-1;
   }
 
+  &__uparrow {
+    position: absolute;
+    bottom: 3%;
+    right: 5%;
+
+    width: 100%;
+    text-align: right;
+
+  }
+
 }
 
 @keyframes moveInDown {

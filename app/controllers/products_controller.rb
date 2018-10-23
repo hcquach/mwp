@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.all.paginate(:page => params[:page])
+    @products = Product.all
     @products = @products.city(params[:city]).paginate(:page => params[:page]) if params[:city].present?
     @products = @products.year(params[:year]).paginate(:page => params[:page]) if params[:year].present?
     @products = @products.online(params[:online]).paginate(:page => params[:page]) if params[:online].present?
