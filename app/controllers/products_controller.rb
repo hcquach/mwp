@@ -1,9 +1,15 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.all.paginate(:page => params[:page]).order('id DESC')
-    @products = @products.online(params[:online]).paginate(:page => params[:page]).order('id DESC') if params[:online].present?
-    @products = Product.where("description ILIKE ?", "%#{params[:query]}%").paginate(:page => params[:page]).order('id DESC') if params[:query].present?
+
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR description ILIKE :query"
+      @products = Product.where(sql_query, query: "%#{params[:query]}%").paginate(:page => params[:page]).order('id DESC')
+    elsif params[:online].present?
+      @products = Product.online(params[:online]).paginate(:page => params[:page]).order('id DESC')
+    else
+      @products = Product.all.paginate(:page => params[:page]).order('id DESC')
+    end
 
     respond_to do |format|
       format.html
