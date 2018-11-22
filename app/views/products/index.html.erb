@@ -17,6 +17,7 @@
         <li><%= link_to "Home", root_path %></li>
         <li><a href="/?online=true">Active</a></li>
         <li><a href="/?online=false">Graveyard</a></li>
+        <li><a href="/assets/Demo_Day_Le_Wagon.mp4">Demoday Video</a></li>
       </ul>
     </div>
 
@@ -56,6 +57,23 @@
 
 </header>
 
+<section class="section-top-products">
+
+  <div class="col-xs-12 col-sm-6">
+    <h2 class="heading-secondary">
+      App of the day
+    </h2>
+    <%= render @skello %>
+  </div>
+
+  <div class="col-xs-12 col-sm-6">
+    <h2 class="heading-secondary">
+      Random App
+    </h2>
+    <%= render @random %>
+  </div>
+
+</section>
 
 <section class="section-products">
 
@@ -65,7 +83,9 @@
 
   <div class="row">
     <% @products.each do |product| %>
-      <%= render product %>
+      <div class="col-xs-12 col-sm-4 col-md-3">
+        <%= render product %>
+      </div>
     <% end %>
   </div>
 

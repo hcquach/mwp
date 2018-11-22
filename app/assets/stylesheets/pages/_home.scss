@@ -61,8 +61,15 @@ body {
   text-transform: uppercase;
   font-size: 2rem;
   font-weight: 400;
-  letter-spacing: 2.5rem;
-  text-align: right;
+  letter-spacing: 2rem;
+  text-align: center;
+}
+
+// Section for top products
+.section-top-products {
+  margin-left: calc(20rem + 1rem);
+  display: flex;
+  justify-content: space-between;
 }
 
 // Section for all products

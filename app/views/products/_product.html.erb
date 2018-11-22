@@ -1,60 +1,59 @@
 <%# Flexbox grid for products %>
-<div class="col-xs-12 col-sm-4 col-md-3">
-  <div class="card">
+<div class="card">
 
-    <%# If online, design depending on the batch city %>
-    <% if !product.online %>
-       <div class='card__side card__side--front-offline'>
-    <% elsif ["Paris", "Bordeaux", "Lille", "Lyon", "Marseille", "Nantes", "London", "Berlin", "Amsterdam", "Barcelona", "Brussels", "Copenhagen", "Lisbon", "Milan", "Lausanne", "Casablanca", "Tel Aviv"].include?(product.city) %>
-       <div class='card__side card__side--front-emea'>
-    <% elsif ["Melbourne", "Bali", "Chengdu", "Shanghai", "Shenzhen", "Tokyo", "Kyoto"].include?(product.city) %>
-       <div class='card__side card__side--front-apac'>
-    <% elsif ["Montréal", "Rio de Janeiro", "Belo Horizonte", "São Paulo", "Mexico", "Buenos Aires"].include?(product.city) %>
-       <div class='card__side card__side--front-amer'>
-    <% end %>
+  <%# If online, design depending on the batch city %>
+  <% if !product.online %>
+     <div class='card__side card__side--front-offline'>
+  <% elsif ["Paris", "Bordeaux", "Lille", "Lyon", "Marseille", "Nantes", "London", "Berlin", "Amsterdam", "Barcelona", "Brussels", "Copenhagen", "Lisbon", "Milan", "Lausanne", "Casablanca", "Tel Aviv"].include?(product.city) %>
+     <div class='card__side card__side--front-emea'>
+  <% elsif ["Melbourne", "Bali", "Chengdu", "Shanghai", "Shenzhen", "Tokyo", "Kyoto"].include?(product.city) %>
+     <div class='card__side card__side--front-apac'>
+  <% elsif ["Montréal", "Rio de Janeiro", "Belo Horizonte", "São Paulo", "Mexico", "Buenos Aires"].include?(product.city) %>
+     <div class='card__side card__side--front-amer'>
+  <% end %>
 
-    <%# If offline, black color and no link %>
-    <% if product.online %>
-      <a href="<%= product.site %>">
-    <% end %>
+  <%# If offline, black color and no link %>
+  <% if product.online %>
+    <a href="<%= product.site %>">
+  <% end %>
 
-        <%# Dislay the product info %>
-        <div class="card__side card__side--front">
-          <div class="card__picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= product.image %>');">
-            &nbsp
-          </div>
-          <h4 class="card__heading">
-            <span class="card__heading-span">
-              <%= product.name.capitalize %>
-            </span>
-          </h4>
-          <h4 class="card__description">
-            <span class="card__description-span">
-              <%= product.description %>
-            </span>
-          </h4>
-          <div class="card__details">
-            <ul>
-              <li><%= product.city %> <%= product.year %> - Batch #<%= product.batch %></li>
-            </ul>
-            <div class="card__subdetails">
-              <div class="card__users">
-                <% product.alumnis.each do |alumni| %>
-                  <figure class="card__user">
-                    <img class="card__img" alt="Alumni" src="<%= alumni.photo %>">
-                    <figcaption class="card__caption">
-                      <%= alumni.name %>
-                    </figcaption>
-                  </figure>
-                <% end %>
-              </div>
-          </div>
-          </div>
+      <%# Dislay the product info %>
+      <div class="card__side card__side--front">
+        <div class="card__picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= product.image %>');">
+          &nbsp
         </div>
+        <h4 class="card__heading">
+          <span class="card__heading-span">
+            <%= product.name.capitalize %>
+          </span>
+        </h4>
+        <h4 class="card__description">
+          <span class="card__description-span">
+            <%= product.description %>
+          </span>
+        </h4>
+        <div class="card__details">
+          <ul>
+            <li><%= product.city %> <%= product.year %> - Batch #<%= product.batch %></li>
+          </ul>
+          <div class="card__subdetails">
+            <div class="card__users">
+              <% product.alumnis.each do |alumni| %>
+                <figure class="card__user">
+                  <img class="card__img" alt="Alumni" src="<%= alumni.photo %>">
+                  <figcaption class="card__caption">
+                    <%= alumni.name %>
+                  </figcaption>
+                </figure>
+              <% end %>
+            </div>
+        </div>
+        </div>
+      </div>
 
-      <% if product.online %>
-        </a>
-      <% end %>
-    </div>
+    <% if product.online %>
+      </a>
+    <% end %>
   </div>
 </div>
+

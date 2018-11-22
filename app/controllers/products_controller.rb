@@ -2,6 +2,9 @@ class ProductsController < ApplicationController
 
   def index
 
+    @skello = Product.where(name: "Skello")
+    @random = Product.all.sample
+
     if params[:query].present?
       sql_query = "name ILIKE :query OR description ILIKE :query"
       @products = Product.where(sql_query, query: "%#{params[:query]}%").paginate(:page => params[:page]).order('id DESC')
