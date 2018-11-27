@@ -22,6 +22,9 @@ gem 'popper_js', '~> 1.9', '>= 1.9.9'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
