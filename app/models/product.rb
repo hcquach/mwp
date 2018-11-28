@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   has_many :alumnis
+  belongs_to :daily, optional: true
 
   scope :city, -> (city) { where city: city }
   scope :year, -> (year) { where year: year }

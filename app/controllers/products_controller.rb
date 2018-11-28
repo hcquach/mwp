@@ -1,9 +1,11 @@
+require 'pry-byebug'
+
 class ProductsController < ApplicationController
 
   def index
 
     @skello = Product.where(name: "Skello")
-    @random = Product.all.sample
+    @random = Daily.first.products.first
 
     if params[:query].present?
       sql_query = "name ILIKE :query OR description ILIKE :query"
