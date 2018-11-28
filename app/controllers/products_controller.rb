@@ -1,5 +1,3 @@
-require 'pry-byebug'
-
 class ProductsController < ApplicationController
 
   def index
