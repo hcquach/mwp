@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   def index
 
     @skello = Product.where(name: "Skello")
-    @random = Daily.first.products.first
+    @random = Daily.first.products.last
 
     if params[:query].present?
       sql_query = "name ILIKE :query OR description ILIKE :query"
