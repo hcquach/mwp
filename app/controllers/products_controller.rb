@@ -1,11 +1,8 @@
-require 'pry-byebug'
-
 class ProductsController < ApplicationController
 
   def index
 
     @skello = Product.where(name: "Skello")
-    # binding.pry
     daily_products = Daily.first.products
     @random = daily_products[daily_products.size-1]
 
