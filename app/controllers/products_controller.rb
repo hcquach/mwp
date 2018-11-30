@@ -2,9 +2,9 @@ class ProductsController < ApplicationController
 
   def index
 
-    @skello = Product.where(name: "Skello")
+    @most_popular = Product.order(votes: :desc).first
     daily_products = Daily.first.products
-    @random = daily_products[daily_products.size-1]
+    @random = daily_products[-1]
 
     if params[:query].present?
       sql_query = "name ILIKE :query OR description ILIKE :query"
