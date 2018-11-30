@@ -104,7 +104,7 @@
       li {
         text-align: center;
         font-size: 1rem;
-        padding: 1rem;
+        padding: 0.5rem;
 
         &:not(:last-child) {
           border-bottom: 1px solid $color-grey-light-2;
@@ -117,6 +117,10 @@
   }
 
    &__subdetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
   }
 
   &__users {
@@ -161,6 +165,40 @@
   &__user:hover &__img {
     transform: translateX(-0.1rem) scale(1);
     filter: blur(1px) brightness(70%);
+  }
+
+  &__upvote {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__arrow {
+    width: 0;
+    height: 0;
+    border-left: 0.6rem solid transparent;
+    border-right: 0.6rem solid transparent;
+    border-top: 0.6rem solid transparent;
+    border-bottom: 0.9rem solid $color-white-1;
+    border-radius: 2px;
+    margin: auto;
+    transition: all 0.15s ease;
+
+  }
+
+  &__count {
+    font-size: 1.5rem;
+  }
+
+  /* Upvote gets a bit bigger */
+  &__upvote:hover {
+    transform: scale(1.2);
+    color: #5898f1;
+    cursor: pointer;
+  }
+
+  /* Arrow triangle turns blue */
+  &__upvote:hover &__arrow {
+    border-bottom: 0.9rem solid #5898f1;
   }
 
 }
