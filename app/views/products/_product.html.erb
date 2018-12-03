@@ -4,17 +4,46 @@
   <%# If online, design depending on the batch city %>
   <% if !product.online %>
      <div class='card__side card__side--front-offline'>
-  <% elsif ["Paris", "Bordeaux", "Lille", "Lyon", "Marseille", "Nantes", "London", "Berlin", "Amsterdam", "Barcelona", "Brussels", "Copenhagen", "Lisbon", "Milan", "Lausanne", "Casablanca", "Tel Aviv"].include?(product.city) %>
-     <div class='card__side card__side--front-emea'>
-  <% elsif ["Melbourne", "Bali", "Chengdu", "Shanghai", "Shenzhen", "Tokyo", "Kyoto"].include?(product.city) %>
-     <div class='card__side card__side--front-apac'>
-  <% elsif ["Montréal", "Rio de Janeiro", "Belo Horizonte", "São Paulo", "Mexico", "Buenos Aires"].include?(product.city) %>
-     <div class='card__side card__side--front-amer'>
-  <% end %>
-
-  <%# If offline, black color and no link %>
-  <% if product.online %>
-    <a href="<%= product.site %>">
+  <% elsif ["Paris", "Bordeaux", "Lille", "Lyon", "Marseille", "Nantes"].include?(product.city) %>
+     <div class='card__side card__side--front-france'>
+  <% elsif ["Berlin"].include?(product.city) %>
+     <div class='card__side card__side--front-germany'>
+  <% elsif ["London"].include?(product.city) %>
+     <div class='card__side card__side--front-england'>
+  <% elsif ["Amsterdam"].include?(product.city) %>
+     <div class='card__side card__side--front-holland'>
+  <% elsif ["Barcelona"].include?(product.city) %>
+     <div class='card__side card__side--front-spain'>
+  <% elsif ["Brussels"].include?(product.city) %>
+     <div class='card__side card__side--front-belgium'>
+  <% elsif ["Copenhagen"].include?(product.city) %>
+     <div class='card__side card__side--front-denmark'>
+  <% elsif ["Lisbon"].include?(product.city) %>
+   <div class='card__side card__side--front-portugal'>
+  <% elsif ["Milan"].include?(product.city) %>
+   <div class='card__side card__side--front-italy'>
+  <% elsif ["Lausanne"].include?(product.city) %>
+   <div class='card__side card__side--front-switzerland'>
+  <% elsif ["Casablanca"].include?(product.city) %>
+   <div class='card__side card__side--front-morocco'>
+  <% elsif ["Tel Aviv"].include?(product.city) %>
+   <div class='card__side card__side--front-israel'>
+  <% elsif ["Melbourne"].include?(product.city) %>
+     <div class='card__side card__side--front-australia'>
+  <% elsif ["Bali"].include?(product.city) %>
+     <div class='card__side card__side--front-indonesia'>
+  <% elsif ["Chengdu", "Shanghai", "Shenzhen"].include?(product.city) %>
+     <div class='card__side card__side--front-china'>
+  <% elsif ["Tokyo", "Kyoto"].include?(product.city) %>
+     <div class='card__side card__side--front-japan'>
+  <% elsif ["Montréal"].include?(product.city) %>
+     <div class='card__side card__side--front-canada'>
+  <% elsif ["Rio de Janeiro", "Belo Horizonte", "São Paulo"].include?(product.city) %>
+     <div class='card__side card__side--front-brazil'>
+  <% elsif ["Mexico"].include?(product.city) %>
+     <div class='card__side card__side--front-mexico'>
+  <% elsif ["Buenos Aires"].include?(product.city) %>
+     <div class='card__side card__side--front-argentina'>
   <% end %>
 
       <%# Dislay the product info %>
@@ -22,6 +51,10 @@
         <div class="card__picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= product.image %>');">
           &nbsp
         </div>
+        <%# If offline, black color and no link %>
+        <% if product.online %>
+          <a href="<%= product.site %>">
+        <% end %>
         <h4 class="card__heading">
           <span class="card__heading-span">
             <%= product.name.capitalize %>
@@ -32,6 +65,9 @@
             <%= product.description %>
           </span>
         </h4>
+        <% if product.online %>
+          </a>
+        <% end %>
         <div class="card__details">
           <ul>
             <li><%= product.city %> <%= product.year %> - Batch #<%= product.batch %></li>
@@ -49,15 +85,12 @@
             </div>
             <div class="card__upvote">
               <div class="card__arrow"></div>
-              <div class="card__count">95</div>
+              <div class="card__count"><%= product.votes %></div>
             </div>
         </div>
         </div>
       </div>
 
-    <% if product.online %>
-      </a>
-    <% end %>
   </div>
 </div>
 

@@ -24,16 +24,84 @@
       background-color: $color-black-1;
     }
 
-    &--front-emea {
-      background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+    &--front-france {
+      background-image: linear-gradient(to right bottom, $color-blue-1, $color-blue-2);
     }
 
-    &--front-amer {
-      background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+    &--front-germany {
+      background-image: linear-gradient(to right bottom, $color-yellow-1, $color-yellow-3);
     }
 
-    &--front-apac {
-      background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+    &--front-belgium {
+      background-image: linear-gradient(to right bottom, $color-red-1, $color-red-2);
+    }
+
+    &--front-england {
+      background-image: linear-gradient(to right bottom, $color-red-3, $color-red-1);
+    }
+
+    &--front-spain {
+      background-image: linear-gradient(to right bottom, $color-red-4, $color-red-3);
+    }
+
+    &--front-denmark {
+      background-image: linear-gradient(to right bottom, $color-red-5, $color-red-2);
+    }
+
+    &--front-portugal {
+      background-image: linear-gradient(to right bottom, $color-green-1, $color-green-2);
+    }
+
+    &--front-italy {
+      background-image: linear-gradient(to right bottom, $color-green-1, $color-green-3);
+    }
+
+    &--front-switzerland {
+      background-image: linear-gradient(to right bottom, $color-red-1, $color-red-6);
+    }
+
+    &--front-holland {
+      background-image: linear-gradient(to right bottom, $color-orange-1, $color-orange-2);
+    }
+
+    &--front-australia {
+      background-image: linear-gradient(to right bottom, $color-blue-3, $color-blue-2);
+    }
+
+    &--front-indonesia {
+      background-image: linear-gradient(to right bottom, $color-red-6, $color-red-7);
+    }
+
+    &--front-china {
+      background-image: linear-gradient(to right bottom, $color-red-8, $color-red-7);
+    }
+
+    &--front-japan {
+      background-image: linear-gradient(to right bottom, $color-red-1, $color-red-9);
+    }
+
+    &--front-canada {
+      background-image: linear-gradient(to right bottom, $color-blue-4, $color-blue-3);
+    }
+
+    &--front-brazil {
+      background-image: linear-gradient(to right bottom, $color-yellow-2, $color-yellow-1);
+    }
+
+    &--front-argentina {
+      background-image: linear-gradient(to right bottom, $color-blue-5, $color-blue-4);
+    }
+
+    &--front-mexico {
+      background-image: linear-gradient(to right bottom, $color-green-3, $color-green-2);
+    }
+
+    &--front-israel {
+      background-image: linear-gradient(to right bottom, $color-blue-5, $color-blue-4);
+    }
+
+    &--front-morocco {
+      background-image: linear-gradient(to right bottom, $color-red-9, $color-red-8);
     }
 
   }
@@ -187,6 +255,7 @@
 
   &__count {
     font-size: 1.5rem;
+    text-align: center;
   }
 
   /* Upvote gets a bit bigger */
