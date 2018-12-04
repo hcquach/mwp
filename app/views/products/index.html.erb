@@ -75,6 +75,22 @@
 
 </section>
 
+<section class="section-popular-keywords">
+
+  <h2 class="heading-secondary">
+    Most Popular Keywords
+  </h2>
+
+  <div class="row">
+    <% @frequencies.each do |word| %>
+      <div class="col-xs-12 col-sm-2">
+        <a href="/?query=<%= word[0] %>"><%= "#" + word[0] %></a>
+      </div>
+    <% end %>
+  </div>
+
+</section>
+
 <section class="section-products">
 
   <h2 class="heading-secondary">
