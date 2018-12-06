@@ -84,7 +84,7 @@
   <div class="row">
     <% @frequencies.each do |word| %>
       <div class="col-xs-12 col-sm-2">
-        <a href="/?query=<%= word[0] %>"><%= "#" + word[0] %></a>
+        <a href="/?query=<%= word[0] %>"><%= "#" + word[0] + " (" + word[1].to_s + ")" %></a>
       </div>
     <% end %>
   </div>

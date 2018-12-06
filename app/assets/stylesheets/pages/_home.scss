@@ -69,6 +69,25 @@ body {
 .section-popular-keywords {
   margin-left: calc(20rem + 1rem);
   text-align: center;
+
+  a:link, a:visited {
+    display: inline-block;
+    text-decoration: none;
+    color: $color-black-1;
+    padding: 0rem 1rem;
+    font-size: 2rem;
+    font-weight: 300;
+    background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-black-1 50%);
+    background-size: 230%;
+    transition: all .4s;
+  }
+
+  a:hover, a:active {
+    background-position: 100%;
+    color: $color-white-1;
+    transform: translateX(1rem);
+  }
+
 }
 
 // Section for top products
