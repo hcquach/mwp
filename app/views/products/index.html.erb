@@ -24,7 +24,16 @@
           <label for="navi-popular-toggle" class="sidebar__categories__button">
             Popular Keywords
           </label>
-          <div class="navi-background">&nbsp;</div>
+          <div class="sidebar__categories__background">&nbsp;</div>
+          <nav class="sidebar__categories__nav">&nbsp;
+            <ul class="sidebar__categories__list">
+              <% @frequencies.each do |word| %>
+                <li>
+                  <a href="/?query=<%= word[0] %>"><%= "#" + word[0] + " (" + word[1].to_s + ")" %></a>
+                </li>
+              <% end %>
+            </ul>
+          </nav>
         </li>
         <li><a href="https://www.youtube.com/watch?v=KsFK7tkwl1A">Demoday Video</a></li>
       </ul>

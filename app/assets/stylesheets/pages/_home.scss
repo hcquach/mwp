@@ -173,6 +173,32 @@ body {
     width: 100%;
     text-align: right;
     padding-right: 1rem;
+
+    &__background {
+      background-color: rgba(0, 0, 0, 0.7);
+      position: fixed;
+      left: $side-bar-size;
+      top: 0px;
+      bottom: 0px;
+      width: $side-bar-size;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    &__list {
+      position: fixed;
+      left: $side-bar-size;
+      top: 25%;
+      width: $side-bar-size;
+      height: 100%;
+      z-index: 1500;
+
+      a {
+        color: $color-white-1 !important;
+      }
+
+    }
+
   }
 
   ul {
