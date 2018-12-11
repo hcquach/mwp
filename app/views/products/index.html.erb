@@ -15,26 +15,59 @@
     <div class="sidebar__categories">
       <ul>
         <li><%= link_to "Home", root_path %></li>
-        <li><a href="/?online=true">Active</a></li>
-        <li><a href="/?online=false">Graveyard</a></li>
-        <li>Year</li>
-        <li>City</li>
         <li>
-          <input type="checkbox" class="sidebar__categories__checkbox" id="navi-popular-toggle">
-          <label for="navi-popular-toggle" class="sidebar__categories__button">
-            Popular Keywords
+          <input type="checkbox" class="sidebar__categories__checkbox" id="navi-place-toggle">
+          <label for="navi-place-toggle" class="sidebar__categories__button">
+            Places
           </label>
-          <div class="sidebar__categories__background">&nbsp;</div>
-          <nav class="sidebar__categories__nav">&nbsp;
+          <nav class="sidebar__categories__navigation">
+            <div class="sidebar__categories__background">&nbsp;</div>
+
             <ul class="sidebar__categories__list">
-              <% @frequencies.each do |word| %>
-                <li>
-                  <a href="/?query=<%= word[0] %>"><%= "#" + word[0] + " (" + word[1].to_s + ")" %></a>
-                </li>
-              <% end %>
+              <li>
+                <input type="checkbox" class="sidebar__categories__checkbox" id="navi-country-toggle">
+                <label for="navi-country-toggle" class="sidebar__categories__button">
+                  France
+                </label>
+              </li>
+            </ul>
+
+          </nav>
+        </li>
+        <li>
+          <input type="checkbox" class="sidebar__categories__checkbox" id="navi-year-toggle">
+          <label for="navi-year-toggle" class="sidebar__categories__button">
+            Year
+          </label>
+          <nav class="sidebar__categories__navigation">
+            <div class="sidebar__categories__background">&nbsp;</div>
+            <ul class="sidebar__categories__list">
+              <% @products_per_year.reverse_each do |year| %>
+                  <li>
+                    <a href="/?year=<%= year[0].to_s %>"><%= "#" + year[0].to_s + " (" + year[1].to_s + ")" %></a>
+                  </li>
+                <% end %>
             </ul>
           </nav>
         </li>
+        <li>
+          <input type="checkbox" class="sidebar__categories__checkbox" id="navi-popular-toggle">
+          <label for="navi-popular-toggle" class="sidebar__categories__button">
+            Popular Topics
+          </label>
+          <nav class="sidebar__categories__navigation">
+            <div class="sidebar__categories__background">&nbsp;</div>
+            <ul class="sidebar__categories__list">
+                <% @frequencies.each do |word| %>
+                  <li>
+                    <a href="/?query=<%= word[0] %>"><%= "#" + word[0] + " (" + word[1].to_s + ")" %></a>
+                  </li>
+                <% end %>
+            </ul>
+          </nav>
+        </li>
+        <li><a href="/?online=true">Active</a></li>
+        <li><a href="/?online=false">The Graveyard</a></li>
         <li><a href="https://www.youtube.com/watch?v=KsFK7tkwl1A">Demoday Video</a></li>
       </ul>
     </div>

@@ -115,6 +115,7 @@ despite
 did
 didn't
 different
+discover
 do
 does
 doesn't
@@ -126,6 +127,7 @@ downwards
 during
 e
 each
+easy
 edu
 eg
 eight
@@ -329,6 +331,7 @@ on
 once
 one
 ones
+online
 only
 onto
 or
@@ -348,6 +351,7 @@ p
 particular
 particularly
 per
+perfect
 perhaps
 placed
 platform
