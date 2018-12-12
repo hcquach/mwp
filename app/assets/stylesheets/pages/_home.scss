@@ -216,6 +216,8 @@ body {
       z-index: 1000;
     }
 
+
+
     &__list {
       position: fixed;
       left: $side-bar-size;
@@ -240,6 +242,155 @@ body {
           transition: all .4s !important;
         }
 
+      }
+
+    }
+
+    &__container__cities {
+      position: fixed;
+      top: 0%;
+      left: $side-bar-size;
+      width: calc(100vw - #{$side-bar-size});
+      height: 100%;
+      z-index: 1500;
+      transition: all .4s;
+
+      .card__city {
+        height: calc(100vh / 5);
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0.95;
+
+        a {
+          color: $color-white-1 !important;
+        }
+
+      }
+
+      .card__city:hover {
+        opacity: 1;
+      }
+
+      .card__city--berlin {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1511363540/ey05opmvj8esek4su6r5.jpg');
+      }
+
+      .card__city--buenosaires {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1515008215/fw14yv3lprbqash9tsiy.jpg');
+      }
+
+      .card__city--amsterdam {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1511363468/kbxd5qwctplel7onwvtl.jpg');
+      }
+
+      .card__city--paris {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1511363534/jjj7wfv2qkfimzc3r5ml.jpg');
+      }
+
+      .card__city--bordeaux {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1511363527/ha9wchkn5khh189nhqw1.jpg');
+      }
+
+      .card__city--lille {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1514889348/busfhitgdu0szzobbgc0.jpg');
+      }
+
+      .card__city--lyon {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1511363537/poujtdh89wrlfdb1od8o.jpg');
+      }
+
+      .card__city--marseille {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1511363521/imbjrkzkscphl7h5175v.jpg');
+      }
+
+      .card__city--montreal {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1511363490/akvrnobeg0hcgirv4ffn.jpg');
+      }
+
+      .card__city--nantes {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1511363514/bivzlom7zxtfducqkbhh.jpg');
+      }
+
+      .card__city--telaviv {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1518702935/wjjz61sqs1mphbjeqw2y.jpg');
+      }
+
+      .card__city--brussels {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1511363466/vnvpkwcchuvpt2glw6i3.jpg');
+      }
+
+      .card__city--chengdu {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1536744481/cvzxdnxn0aqte6fnmspd.jpg');
+      }
+
+      .card__city--shanghai {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1511363494/bknqkcwuwio4zhvmwbsv.jpg');
+      }
+
+      .card__city--shenzhen {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1538028442/cwv0n1kowbvxe8eqtcms.jpg');
+      }
+
+      .card__city--copenhagen {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1511363511/bjhwo9jlewnvx4wc26vo.jpg');
+      }
+
+      .card__city--london {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1511363477/qd0coirdypia4w1vn3r1.jpg');
+      }
+
+      .card__city--bali {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1511363470/i71xzflipodtc7xst0gr.jpg');
+      }
+
+      .card__city--kyoto {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1530787199/llbjrr8bliik41yt1lew.jpg');
+      }
+
+      .card__city--tokyo {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1511363463/phbp3nj5bla8jw592aer.jpg');
+      }
+
+      .card__city--casablanca {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1526590989/l7cvue12ooum6fwhxf8b.jpg');
+      }
+
+      .card__city--barcelona {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1512573935/xgofonemfzqiydml6s4q.jpg');
+      }
+
+      .card__city--lausanne {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1537346748/hfkli0nfqlfudn6lbfrg.jpg');
+      }
+
+      .card__city--milan {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1511363475/v1mmxecnoeng5bs9s1pb.jpg');
+      }
+
+      .card__city--melbourne {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1511363485/lkcefaztq2zeapij8jsm.jpg');
+      }
+
+      .card__city--mexico {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1528483015/fdqmdmang0tkdr7risx3.jpg');
+      }
+
+      .card__city--lisbon {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1511363518/tbttvpvsayqwtvkzg29n.jpg');
+      }
+
+      .card__city--belohorizonte {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1511363501/ikwrwcqgb1dohsrwogzg.jpg');
+      }
+
+      .card__city--riodejaneiro {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1511363497/dbbekpmklgkxczj2wqwq.jpg');
+      }
+
+      .card__city--saopaulo {
+        background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/wagon/image/upload/c_fill,w_150/v1526053365/hpfe4f4msysebldbokgy.jpg');
       }
 
     }
