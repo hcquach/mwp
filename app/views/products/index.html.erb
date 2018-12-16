@@ -16,11 +16,11 @@
       <ul>
         <li><%= link_to "Home", root_path %></li>
         <li>
-          <input type="checkbox" class="sidebar__categories__checkbox" id="navi-place-toggle">
-          <label for="navi-place-toggle" class="sidebar__categories__button">
+          <input type="radio" name="filter" class="sidebar__categories__checkbox--cities" id="navi-cities-toggle">
+          <label for="navi-cities-toggle" class="sidebar__categories__button">
             Per Place
           </label>
-          <nav class="sidebar__categories__navigation">
+          <nav class="sidebar__categories__navigation--cities">
             <div class="sidebar__categories__container__cities">
               <div class="card__city card__city--amsterdam col-xs-2"><a href="/?city=Amsterdam">Amsterdam</a></div>
               <div class="card__city card__city--bali col-xs-2"><a href="/?city=Bali">Bali</a></div>
@@ -56,11 +56,11 @@
           </nav>
         </li>
         <li>
-          <input type="checkbox" class="sidebar__categories__checkbox" id="navi-year-toggle">
+          <input type="radio" name="filter" class="sidebar__categories__checkbox--year" id="navi-year-toggle">
           <label for="navi-year-toggle" class="sidebar__categories__button">
             Per Year
           </label>
-          <nav class="sidebar__categories__navigation">
+          <nav class="sidebar__categories__navigation--year">
             <div class="sidebar__categories__background">&nbsp;</div>
             <ul class="sidebar__categories__list">
               <% @products_per_year.reverse_each do |year| %>
@@ -72,11 +72,11 @@
           </nav>
         </li>
         <li>
-          <input type="checkbox" class="sidebar__categories__checkbox" id="navi-popular-toggle">
-          <label for="navi-popular-toggle" class="sidebar__categories__button">
+          <input type="radio" name="filter" class="sidebar__categories__checkbox--topic" id="navi-topic-toggle">
+          <label for="navi-topic-toggle" class="sidebar__categories__button">
             Per Topic
           </label>
-          <nav class="sidebar__categories__navigation">
+          <nav class="sidebar__categories__navigation--topic">
             <div class="sidebar__categories__background">&nbsp;</div>
             <ul class="sidebar__categories__list">
                 <% @frequencies.each do |word| %>
@@ -86,6 +86,12 @@
                 <% end %>
             </ul>
           </nav>
+        </li>
+        <li class="sidebar__categories__filter--close">
+          <input type="radio" name="filter" class="sidebar__categories__checkbox--close" id="navi-close-toggle">
+          <label for="navi-close-toggle" class="sidebar__categories__button">
+            Close
+          </label>
         </li>
         <li><a href="/?online=true">Active</a></li>
         <li><a href="/?online=false">The Graveyard</a></li>
@@ -136,34 +142,20 @@
 
 <section class="section-top-products">
 
-  <div class="col-xs-12 col-sm-6">
-    <h2 class="heading-secondary">
-      App of the day
-    </h2>
-    <%= render @random %>
-  </div>
-
-  <div class="col-xs-12 col-sm-6">
-    <h2 class="heading-secondary">
-      Most popular
-    </h2>
-    <%= render @most_popular %>
-  </div>
-
-</section>
-
-<section class="section-popular-keywords">
-
-  <h2 class="heading-secondary">
-    Most Popular Keywords
-  </h2>
-
   <div class="row">
-    <% @frequencies.each do |word| %>
-      <div class="col-xs-12 col-sm-2">
-        <a href="/?query=<%= word[0] %>"><%= "#" + word[0] + " (" + word[1].to_s + ")" %></a>
-      </div>
-    <% end %>
+    <div class="col-xs-12 col-sm-6">
+      <h2 class="heading-secondary">
+        App of the day
+      </h2>
+      <%= render @random %>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+      <h2 class="heading-secondary">
+        Most popular
+      </h2>
+      <%= render @most_popular %>
+    </div>
   </div>
 
 </section>

@@ -127,10 +127,22 @@
     top: 1rem;
     left: 1rem;
     text-align: left;
-    width: 90%
+    width: 75%
   }
 
-  &__heading-span {
+  &__number {
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: $color-black-1;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    text-align: right;
+    width: 25%
+  }
+
+  &__heading-span, &__number-span {
     padding: 0 0.5rem;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
