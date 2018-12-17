@@ -230,7 +230,17 @@ body {
       z-index: 1000;
     }
 
+    &__checkbox--cities:checked  ~ label {
+      font-weight: 600;
+    }
 
+    &__checkbox--year:checked  ~ label {
+      font-weight: 600;
+    }
+
+    &__checkbox--topic:checked  ~ label {
+        font-weight: 600;
+    }
 
     &__list {
       position: fixed;
